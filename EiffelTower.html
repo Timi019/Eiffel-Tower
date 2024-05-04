@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EiffelTower.paris.com</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.33" />
+</head>
+
+<body>
+   <strong><h1>Eiffel Tower</h1></strong>
+   <a href="https://youtube.com">
+      <img src="eiffeltower.jpg">
+   </a>
+   <p>The <b>Eiffel Tower</b> is the wrought-iron tower that stands <b>1062 ft</b> (<b>324 m</b>) tall in Paris.</p>
+   <p>Currently, the <b>Eiffel Tower</b> is the most-visited monument in the world with over <b>7 million</b> visitors a year.</p>
+   <p>Visitors can choose to go up using the Tower lift or the stairs. There are <b>1665 steps</b> to the top.</p>
+   <b>Transport:</b>
+   <ul>
+      <li>Bus: lines 42, 69, 72, 82, 87.</li>
+      <li>Metro: Trocadero, Ecole militare.</li>
+   </ul>
+   <b>Prices:</b>
+   <table border="2">
+      <tr>
+	 <th>Category</th><th>Price</th>
+      </tr>
+      <tr>
+	 <td>Adults</td><td>$12</td>
+      </tr>
+      <tr>
+	 <td>Children</td><td>$5</td>
+      </tr>
+   </table>
+   <div class="form-section">
+      <section id="buy">
+	 <label for="name">Adults:</label>
+	 <input type="number" value="adults" id="adults">
+	 <label for="name">Children:</label>
+	 <input type="number" value="children" id="children">
+	 <input type="button" value="Buy" id="buyBtn">
+      </section>
+   </div>
+   <section><footer>&copy; Copyright</footer></section>
+</body>
+</html>
+<style>
+   b {
+      color: #2493df;
+   }
+   footer {
+      color: #595959;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+   }
+   strong {
+      color: #2493df;
+   }
+   heading {
+      font-size: 20px;
+      letter-spacing: 2px; 
+      margin-top: 10px;
+      margin-bottom: 10px;
+   }
+   label {
+      font-size: 16px;
+      font-weight: bold;
+   }
+   section {
+      padding: 10px;
+   }
+   body {
+      background-color: #e0e0e0;
+   }
+   #buy {
+      background-color: #687373;
+      margin-top: 10px;
+      color: #fcfcfc;
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      width: 100%;
+      box-sizing: border-box;
+   }
+   ul {
+      list-style-type: square;
+      list-style-position: inside;
+      padding-left: 30px;
+   }
+   td, th {
+      border: 1px solid black;
+      padding: 10px;
+   }
+   th {
+      background-color: #2493df;
+      color: white;
+   }
+   form {
+      display: flex;
+   }
+   .form-section {
+      flex: 1;
+   }
+   #children {
+      width: 50px;
+      height: 40px;
+   }
+   #adults {
+      width: 50px;
+      height: 40px;
+   }
+   img {
+      float: left;
+      margin: 10px;
+   }
+   input[type="button"]{
+      padding: 2px;
+      background-color: #2493df;
+      width: 50px;
+      color: white;
+      font-weight: bold;
+      border: none;
+      width: 50px;
+      height 30px;
+   }
+</style>
+<script>
+   window.onload = function(){
+      var buy = document.getElementById("buyBtn");
+      buy.onclick = function() {
+	 var adults = document.getElementById("adults").value;
+	 var children = document.getElementById("children").value;
+	 var ac = children + adults;
+	 var price = adults * 12 + children * 5;
+	 var result = window.confirm(price + " dollars");
+	 if(result == true){
+	    if(ac > 1){
+	       window.alert("Tickets printed");
+	    }
+	    else if(ac == 1){
+	       window.alert("Ticket printed");
+	    }
+	    else{
+	       window.alert("ERROR CODE: 420");
+	    }
+	 }
+      }
+   }
+</script>
